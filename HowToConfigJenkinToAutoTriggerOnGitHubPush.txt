@@ -1,1 +1,6 @@
-hI
+Get the jenkin's hook URL from :
+Manage Jenkins->Configratio->GitHub->Specify another hook url for GitHub configuration
+
+and 
+Added Webhook in github from:
+setting-> Webhooks-> customer
