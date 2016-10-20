@@ -1,0 +1,2 @@
+--for EC2
+sudo rsync -rave "ssh -i vk2.pem" ./jenkins.war ubuntu@ec2-54-201-153-62.us-west-2.compute.amazonaws.com:/home/ubuntu
