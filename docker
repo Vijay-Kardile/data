@@ -1,0 +1,3 @@
+sudo apt-get install docker.io 
+sudo docker pull ubuntu
+docker run -it ubuntu
