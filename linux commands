@@ -1,0 +1,2 @@
+--to add docker demon to start on boot 
+sudo systemctl enable docker
