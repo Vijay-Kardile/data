@@ -1,2 +1,4 @@
 --for EC2
 sudo rsync -rave "ssh -i vk2.pem" ./jenkins.war ubuntu@ec2-54-201-153-62.us-west-2.compute.amazonaws.com:/home/ubuntu
+--file to remote server
+sudo rsync -avz /home/osgdev/Downloads/jdk-8u111-linux-i586.tar.gz  osgdev@192.168.0.36:/home/osgdev/Downloads/
