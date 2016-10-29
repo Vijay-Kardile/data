@@ -1,0 +1,6 @@
+#Resize VM
+BoxManage internalcommands setvdiuuid disk2.vdi
+VBoxmanage modifyhd MyLinux.vdi --resize 100000
+or 
+BoxManage internalcommands sethduuid disk2.vdi
+VBoxmanage modifyhd MyLinux.vdi --resize 100000
