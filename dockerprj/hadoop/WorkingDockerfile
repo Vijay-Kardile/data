@@ -11,7 +11,7 @@ RUN mv jdk-8u111-linux-i586 java
 RUN rm *.gz
 
 RUN apt-get update
-RUN apt-get install -y libc6-i386
+RUN apt-get install -y libc6-i386 ssh
 
 RUN PATH="/home/osgdev/java/bin:/home/osgdev/hadoop/bin:$PATH"
 RUN export LD_LIBRARY_PATH PATH
