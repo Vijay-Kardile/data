@@ -1,4 +1,6 @@
 #Resize VM
+# D:\000.2016\WorkArea\openconnect-12.04.5-bigdata-9.2> "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyhd openconnect-12.04.5-bigdata-9.2.vdi --resize
+200000
 BoxManage internalcommands setvdiuuid disk2.vdi
 VBoxmanage modifyhd MyLinux.vdi --resize 100000
 or 
