@@ -1,0 +1,17 @@
+
+FROM ubuntu:14.04
+COPY /file/jdk-8u111-linux-i586.tar.gz /home/osgdev/
+COPY /file/hadoop-2.7.3.tar.gz /home/osgdev/
+
+WORKDIR /home/osgdev
+RUN tar xvf jdk-8u111-linux-i586.tar.gz
+RUN tar xvf hadoop-2.7.3.tar.gz
+RUN mv hadoop-2.7.3 hadoop
+RUN mv jdk-8u111-linux-i586 java
+RUN rm *.gz
+
+RUN apt-get update
+RUN apt-get install -y libc6-i386
+
+RUN PATH="/home/osgdev/java/bin:/home/osgdev/hadoop/bin:$PATH"
+RUN export LD_LIBRARY_PATH PATH
