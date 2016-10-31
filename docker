@@ -1,3 +1,6 @@
 sudo apt-get install docker.io 
 sudo docker pull ubuntu
 docker run -it ubuntu
+
+hadoop
+https://hub.docker.com/r/sequenceiq/hadoop-docker/~/dockerfile/
