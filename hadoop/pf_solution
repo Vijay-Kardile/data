@@ -1,0 +1,8 @@
+PF - Solution 
+********************************************
+Source to HDFS
+- C:D to hadoop file gateway/landing area
+- files are pushed to HDFS using WebHDFS put API
+e.g.curl -i -X PUT -L "http://$<Host_Name>:$<Port>/webhdfs/v1/foo/newFile?op=CREATE" -T newFile
+- file validation in HDFS
+-jobs are scheduled in TWS
