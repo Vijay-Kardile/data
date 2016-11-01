@@ -1,0 +1,27 @@
+#put files into HDFS using WebHDFS API
+
+#read file from HDFS
+./hadoop fs -put - /tmp/test.txt
+ curl -i -L "http://localhost:50070/webhdfs/v1/tmp/test.txt?op=OPEN"
+
+#read files from HDFS folder
+curl -i "http://localhost:50070/webhdfs/v1/tmp/?op=LISTSTATUS"
+
+#rename file
+curl -i -X PUT "http://localhost:50070/webhdfs/v1/tmp/test.txt?op=RENAME&user.name=root&destination=/tmp/newtest.txt" 
+
+# put file into HDFS
+date >> my.file
+curl -i -X PUT -L "http://localhost:50070/webhdfs/v1/tmp/my.file?op=CREATE&user.name=root" -T ./my.file
+ 
+ 
+#add folder
+curl -i -X PUT "http://localhost:50070/webhdfs/v1/tmp/myfolder?op=MKDIRS&permission=777&user.name=root"
+
+ 
+ # this will execute a hive query and save result to hdfs file in your home directory called output
+ curl -s -d execute="select+*+from+sample_08;" \
+  -d statusdir="output" \ 
+   'http://localhost:50111/templeton/v1/hive?user.name=root'
+ 
+ 
