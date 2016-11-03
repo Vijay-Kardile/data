@@ -1,0 +1,1 @@
+spark-submit --class org.sparkexample.WordCount --master local[2] ./target/first-example-1.0-SNAPSHOT.jar hdfs://quickstart.cloudera:8020/tmp/iputfile.txt hdfs://quickstart.cloudera:8020/tmp/test.txt
