@@ -1,0 +1,17 @@
+#Access file from HDFC and print
+so = sc.textFile("hdfs://192.168.0.40:32800/tmp/sparkoverview.txt")
+for x in so.collect():
+  print x
+  
+#Access file from HDFC and print
+so = sc.textFile("hdfs://192.168.0.40:32800/tmp/sparkoverview.txt")
+p = so.map(lambda l: l.split(" "))
+for x in p.collect():
+  print x
+  
+  
+so = sc.textFile("hdfs://192.168.0.40:32800/tmp/sparkoverview.txt")
+p = so.map(lambda l: l.split(" "))
+p.saveAsTextFile("hdfs://192.168.0.40:32800/tmp/so_1.txt")
+
+newso = sc.textFile("hdfs://192.168.0.40:32800/tmp/so_1.txt")
