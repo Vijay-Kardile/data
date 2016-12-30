@@ -1,0 +1,18 @@
+from pyspark import SparkConf, SparkContext
+
+conf = SparkConf().setMaster("local").setAppName("MinTem")
+sc = SparkContext(conf = conf)
+def parseline(line):
+	fs = line.split(',')
+	e = fs[0]
+	d = fs[1]
+	sal = fs[2]
+	return(e,d,sal)
+
+lines = sc.textFile("file:///usr/local/spark/bin/emp.txt")
+parsedlines = lines.map(parseline)
+mydept = parsedlines.filter(lambda x: "HR" in x[1])
+results =  mydept.collect()
+
+for result in results: 
+	print result[0] + "\t" + result[1] + "\t" + result[2]  
